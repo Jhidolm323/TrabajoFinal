@@ -1,0 +1,322 @@
+/********************************************************/
+/*    Hoja de estilos para Cruz Cafuné pagina           */
+/*    Autor: José Luis Hidalgo Olmedo                   */
+/*    Trabajo para Lenguaje de Marca                    */
+/*    Fecha inicio: 28/11/2023                          */                                            
+/********************************************************/
+
+@font-face {
+    font-family: "Tiburon";
+    src: url(../fonts/roughshark-demo/RoughsharkDemoRegular.ttf);
+}
+
+@font-face {
+    font-family: "Normal";
+    src: url(../fonts/playfair-display-font/PlayfairDisplayRegular-ywLOY.ttf);
+}
+
+
+/********* CSS GENERAL ********/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    overflow-x: unset;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    background-color:#c6ccd8;
+    margin: 0;
+    padding: 0;
+ 
+}
+
+#contenedor {
+    max-width: 100%;
+    margin: auto;
+}
+
+h2 {
+    font-family: "Tiburon";
+    color: #003EA9;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+p {
+    padding-top: 2%;
+    font-family: "Normal";
+}
+
+a {
+    font-family: "Normal";
+    text-decoration: none;
+    color: #003EA9;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    padding-bottom: 2%;
+    padding-right: 5%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*********FIN CSS GENERAL *********/
+
+
+/********** CSS NAV **************/
+
+nav {position: sticky;/***Esto es para fijar la barra arriba****/
+    top: 0;
+    width: 100%;
+    z-index: 99;}
+
+.navegacion {font-family: "Normal";
+        overflow: hidden;
+        background-color:rgb(24, 24, 52) ;}
+
+.navegacion a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1.5em}
+
+
+.navegacion a:hover {
+        background-color: rgb(229, 255, 0);
+        color: black;}
+
+
+.navegacion .icon {
+        display: none;}
+
+.navegacion.responsive a {
+        float: none;
+        display: block;
+        text-align: left;}
+
+/********************** MEDIA QUERIES DEL NAV *******************/
+
+/*Hace que el menú Hamburguesa aparezca cuando la pantalla es chica*/
+@media screen and (max-width: 768px) {
+    .navegacion a:not(:first-child) {display: none;}
+    .navegacion a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+/*Pone el menú a la Izquierda */
+
+@media screen and (max-width: 768px) {
+    .navegacion.responsive {position: relative;}
+    .navegacion.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;}
+
+    .navegacion.responsive a {
+         display: block;
+        text-align: center;
+    }
+}
+
+/****************** FIN DE LAS MEDIA QUERIES DEL NAV ****************/
+/*********** FIN DEL CSS DEL NAV **************/
+
+
+/********** BANNER *********/
+
+#hero-imagen {
+    background-image: url("../images/Banner/Banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+#hero-texto {
+    margin: 0;
+    padding: 0;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    /* El contenido se coloca de abajo hacia arriba */
+    flex-direction: column;
+    /**********************/
+
+    justify-content: center;
+    align-items: center;
+    font-family: "Tiburon";
+    font-size: 70px;
+    text-shadow: 10px 10px 10px #000000;
+    background-color: rgba(0, 22, 40, 0.5);
+}
+
+/********** FIN DEL BANNER *********/
+
+
+/*********** GRID Y CONTENIDO **********/
+
+.grid {
+    padding-top: 3%;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px; /* Espacio entre las columnas */
+    padding-right: 20px;
+    font-family: "Normal";
+    font-size: 1.2em;
+}
+
+.col /*(Col De COLUMNA */{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.col iframe {
+    margin-top: 8%;
+    border: 0px;
+    width: 100%; 
+    height: 300px; 
+    display: block; 
+}
+
+
+/*********** FIN DEL GRID Y CONTENIDO **********/
+
+
+
+
+/********* FOOTER ******/
+footer {
+    font-family: "Normal";
+    width: 100%;
+    background-color: rgb(24, 24, 52);
+}
+
+footer .parte1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 50px;
+    padding: 45px 0px; 
+}
+
+
+footer .parte1 .caja h3{
+    color: #FFF;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+footer .parte1 .caja p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+footer .parte1 .redes-sociales a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    margin-right: 10px;
+    background-color: #0d2033;
+    transition: all 300ms ease;
+    text-align: center;
+}
+
+footer .parte1 .redes-sociales a:hover {
+    color: aqua;
+}
+
+footer .parte2 {
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: white;
+}
+
+small {
+    font-size: 15px;
+}
+
+#caja1 {
+    margin-left: 10%;
+}
+
+
+ @media only screen and (max-width : 768px) {
+    * {
+        margin: 0;
+        overflow-x: unset;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    ol {
+        font-family: "Normal";
+        font-size: 1em;
+    }
+        
+    ul {
+        font-family: "Normal";
+        font-size: 1em;
+    }
+        
+    main {
+        width: 100%;
+        }
+
+    #hero-imagen {
+        background-size: cover;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;}
+    
+    #hero-texto {
+        font-size: 30px; /* Ajustar el tamaño del texto para pantallas más pequeñas */
+           }
+
+    .grid {
+        grid-template-columns: 100%;
+        text-align: justify;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: 30px;
+    }
+    h2 {
+        padding-top: 10px;
+        font-size: 3em;
+    }
+    footer .parte1 .redes-sociales {
+        padding-right: 20px;}
+}
